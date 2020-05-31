@@ -5,6 +5,9 @@
 
     .left-column {
         background-size: cover;
+        display: grid;
+        grid-template-rows: 1fr;
+        height: calc(100vh - 84px);
     }
     .right-column {
         display: flex;
