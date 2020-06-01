@@ -7,10 +7,54 @@
     }
 }
 .content-page-wrapper {
-    display: grid;
-    width: 100vw;
-    height: calc(100vh - 114px);
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    width: 60vw;
+    height: calc(100vh - 125px);
+    margin-left: calc(25vw);
+    bottom: 0px;
+    
+
+    .center-content {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        justify-items: center;
+        align-content: center;
+
+        width: 750px;
+
+        border-radius: 7px;
+        background-image: linear-gradient(to right,$offwhite , $offwhite);
+        box-shadow: 1px 4px 5px 5px grey;
+
+        .contactForm-about-wrapper {
+            height: 300px;
+            margin-top:75px;
+        }
+
+    }
+
+
+    .img-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width:200px;
+        height:200px;
+        margin-top: 25px;
+        border-radius: 50%;
+
+        img{
+            border-radius: 50%;
+            border-width: 0px;
+            box-shadow: 4px 1px 5px grey;
+            margin-top: 90px;
+        }
+    }
+
+    .text-about-wrapper {
+        align-self: center;
+        width: 550px;
+    }
 
 
 
@@ -34,6 +78,7 @@
 }
 
 
+//For Contact Possibly move
 .Contact-Form {
     display: flex;
     align-items: center;
@@ -67,9 +112,12 @@
     }
 }
 
+
+
 .social-footer-wrapper {
-    position: absolute;
-    bottom:0px;
+    display: flex;
+    align-items: center;
+    justify-self: center;
 
     .link {
         display: grid;

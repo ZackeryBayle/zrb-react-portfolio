@@ -6,16 +6,29 @@
     justify-content: space-evenly;
     justify-items: center;
     align-items: baseline;
+    height: 100px;
 
 
     .card {
         display: grid;
-        grid-template-rows: 1fr 1fr;
-        justify-content: center;
+        grid-template-rows: 1fr;
+        justify-content: space-between;
         align-content:center;
-        margin-top: 45%;
+        margin-top: 1%;
+        margin-left: 10px;
+
+        padding-top: 15px;
+        padding-left: 10px;
+        padding-right: 10px;
         
         transition: 0.5s;
+
+        border-radius: 5px;
+        background-image: linear-gradient(to right,black , rgba(0, 0, 0, 0.87));
+        box-shadow: 4px 2px 2px grey;
+
+
+
 
         &:hover{
             transform: translateY(-30px);
@@ -59,7 +72,7 @@
 
                     h2 {
                         transition: 0.5s;
-                        color: #191919;
+                        color: $teal;
                         font-weight: 700;
                         font-size: 40px;
                         transition: 0.5s;
@@ -68,7 +81,7 @@
                     }
                     span{
                         font-size: 24px;
-                        transition: 0.5s;
+                        transition: 0.3s;
                     }
                 }
             }
@@ -81,10 +94,12 @@
             align-items: center;
             justify-content: center;
             transition: 0.5s;
+            color: $teal;
         }
     }
     .card {
         &:hover {
+            box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
             .percent {
                 .number {
                     h2 {
@@ -136,6 +151,9 @@ svg {
 //SVG stroke colors
 
 @keyframes fill {
+    from {
+        stroke-dashoffset: 430;
+    }
     to {
         stroke-dashoffset: 0;
     }
@@ -146,7 +164,7 @@ svg {
 		svg {
 			circle {
 				&:nth-child(2) {
-                    stroke-dashoffset: calc(440 - (440 * 90) / 100); //calc(440 - (440 * 90) / 100)
+                    stroke-dashoffset: calc(440 - (440 * 90) / 100); 
                     stroke:$teal;
                     animation: fill 1s linear;
 				}
@@ -169,7 +187,8 @@ svg {
 			circle {
 				&:nth-child(2) {
                     stroke-dashoffset: calc(440 - (440 * 60) / 100);
-					stroke:$teal;
+                    stroke:$teal;
+                    animation: fill 1s linear;
 				}
 			}
 		}
@@ -179,7 +198,8 @@ svg {
 			circle {
 				&:nth-child(2) {
                     stroke-dashoffset: calc(440 - (440 * 75) / 100);
-					stroke:$teal;
+                    stroke:$teal;
+                    animation: fill 1s linear;
 				}
 			}
 		}

@@ -1,4 +1,9 @@
+
+
+
+// const nodemailer = require("nodemailer");
 import React, { Component } from 'react';
+
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import axios from "axios";
 
@@ -26,22 +31,35 @@ export default class ContactForm extends Component {
         })
     }
 
-    handleSubmit(event) {
+    handleSubmit(e) {
+        const { name, email, message } = this.state   
+        //Mailer
 
-        const { name, email, message } = this.state
 
-        const form = axios.post('/api/form', {
-            name,
-            email,
-            message
+        e.preventDefault();
+
+
+        axios({
+            method: "POST", 
+            url:"http://localhost:3002/", 
+            data: {
+                name: e.name,   
+                email: e.email,  
+                messsage: e.message
+            }
+        }).then((response)=>{
+            if (response.data.msg === 'success'){
+                alert("Message Sent."); 
+                this.resetForm()
+            }else if(response.data.msg === 'fail'){
+                alert("Message failed to send.")
+            }
         });
-
-
-
-        event.preventDefault();
     }
 
-
+    resetForm(){
+        document.getElementById('contact-form').reset();
+    }
 
 
 

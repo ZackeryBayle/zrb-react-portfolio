@@ -8,22 +8,18 @@ import ProfilePicture from "../../../static/assets/images/round-white.png";
 export default function() {
     return(
         <div className="content-page-wrapper">
-            <div 
-                className="left-column" 
-                style={{
-                    background: "url("+ loginImg + ") no-repeat",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center"
-                }} 
-            
-            />
-
-            <div className="right-column">
-                <img src={ProfilePicture} />
-                <ContactForm />
+            <div className="center-content">            
+                <div className="img-wrapper">
+                    <img src={ProfilePicture} />
+                </div>
+                <div className="contactForm-about-wrapper">
+                    <ContactForm />
+                </div>
 
                 <SocialFooter />
+
             </div>
+
 
         </div>
     )
