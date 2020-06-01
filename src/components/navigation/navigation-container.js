@@ -61,17 +61,20 @@ const NavigationComponent = (props) => {
             </div>
 
             <div className="right-side">
-                ZACKERY BAYLE
-                
-                {props.loggedInStatus === "LOGGED_IN" ? (
-                    <a onClick={handleSignOut}>
-                        <FontAwesomeIcon icon="sign-out-alt" />
-                    </a>
-                ) : null}
-                
-                {props.loggedInStatus !== "LOGGED_IN" ? (
-                        dynamicLink("/auth", <FontAwesomeIcon icon="sign-in-alt" className="sign-in-icon" />)
-                ) : null}
+                <div className="text-name">
+                    ZACKERY BAYLE
+                </div>
+                <div className="log-icon-wrapper">
+                    {props.loggedInStatus === "LOGGED_IN" ? (
+                        <a className="sign-out-icon" onClick={handleSignOut}>
+                            <FontAwesomeIcon icon="sign-out-alt" className="sign-out-icon"/>
+                        </a>
+                    ) : null}
+                    
+                    {props.loggedInStatus !== "LOGGED_IN" ? (
+                            dynamicLink("/auth", <FontAwesomeIcon icon="sign-in-alt" className="sign-in-icon" />)
+                    ) : null}
+                </div>
 
 
 

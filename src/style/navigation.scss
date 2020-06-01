@@ -4,6 +4,8 @@
     padding: 30px;
   
     .right-side {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       a {
         margin-left: 15px;
         cursor: pointer;
@@ -14,11 +16,10 @@
           color: $dark-teal;
         }
       }
-      .sign-in-icon {
+      .sign-in-icon, .sign-in-icon {
         color: $teal;
         margin-left: 15px;
         cursor: pointer;
-        color: $teal;
         transition: 0.5s ease-in-out;
   
         &:hover {
